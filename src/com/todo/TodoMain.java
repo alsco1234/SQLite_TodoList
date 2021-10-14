@@ -34,12 +34,15 @@ public class TodoMain {
 				break;
 				
 			case "comp":
-				int num = sc.nextInt();
-				TodoUtil.completeItem(l, num);
+				TodoUtil.completeItem(l);
 				break;
 				
 			case "del":
 				TodoUtil.deleteItem(l);
+				break;
+				
+			case "del_comp":
+				TodoUtil.compdelItem(l);
 				break;
 					
 			case "edit":
@@ -82,6 +85,16 @@ public class TodoMain {
 			case "ls_comp":
 				System.out.println("완료된것만 정렬하였습니다");
 				TodoUtil.ComplistAll(l);
+				break;
+				
+			case "ls_week":
+				System.out.println("이번주 할 일입니다");
+				TodoUtil.WeeklistAll(l);
+				break;
+				
+			case "ls_priority":
+				System.out.println("중요도순으로 정렬하였습니다");
+				TodoUtil.listAll(l, "priority", 0);
 				break;
 				
 			case "find":
